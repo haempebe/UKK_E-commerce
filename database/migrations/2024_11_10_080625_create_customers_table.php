@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('password');
-            $table->string('phone');
-            $table->text('address1');
-            $table->text('address2');
-            $table->text('address3');
+            $table->foreignId('user_id')->index()->constrained('users')->cascadeOnDelete();
+            $table->string('name')->nullable();
+            $table->string('pin')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('main_address')->nullable();
             $table->timestamps();
         });
     }

@@ -18,11 +18,6 @@ return new class extends Migration
             $table->text('description');
             $table->integer('price');
             $table->integer('stok_quantity');
-            $table->string('image1_url')->nullable();
-            $table->string('image2_url')->nullable();
-            $table->string('image3_url')->nullable();
-            $table->string('image4_url')->nullable();
-            $table->string('image5_url')->nullable();
             $table->timestamps();
         });
     }
