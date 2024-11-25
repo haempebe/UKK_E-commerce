@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('order_id')->index()->constrained('orders')->cascadeOnDelete();
             $table->dateTime('shipping_date');
-            $table->string('tracking_code');
-            $table->string('status');
+            $table->string('tracking_code', 20)->nullable();
+            $table->string('status', 20);
             $table->timestamps();
         });
     }

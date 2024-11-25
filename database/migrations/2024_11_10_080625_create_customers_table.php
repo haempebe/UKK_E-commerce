@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->index()->constrained('users')->cascadeOnDelete();
-            $table->string('name')->nullable();
-            $table->string('pin')->nullable();
-            $table->string('phone')->nullable();
+            $table->string('name', 50);
+            $table->string('email', 255)->unique();
+            $table->string('password', 255);
+            $table->string('phone', 20)->nullable();
             $table->string('main_address')->nullable();
             $table->timestamps();
         });

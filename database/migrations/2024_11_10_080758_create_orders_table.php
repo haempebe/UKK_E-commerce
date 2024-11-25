@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('customer_id')->index()->constrained('customers')->cascadeOnDelete();
             $table->dateTime('order_date');
             $table->bigInteger('total_amount');
-            $table->string('status');
+            $table->string('status', 50);
             $table->timestamps();
         });
     }
